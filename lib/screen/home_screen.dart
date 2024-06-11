@@ -13,17 +13,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         centerTitle: true,
         elevation: 5,
-        backgroundColor: Colors.white70,
-        foregroundColor: Colors.green,
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.red,
         title: const Text(
-          "오늘의 웹툰",
+          "Toonflix",
           style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
+            fontSize: 28,
+            fontWeight: FontWeight.w600,
+            fontFamily: "Oswald",
           ),
         ),
       ),
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
             title: webtoon.title, thumb: webtoon.thumb, id: webtoon.id);
       },
       separatorBuilder: (context, index) => const SizedBox(
-        width: 40,
+        width: 20,
       ),
     );
   }

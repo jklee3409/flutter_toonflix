@@ -52,6 +52,8 @@ class Webtoon extends StatelessWidget {
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
+              fontFamily: "Oswald",
+              color: Colors.white,
             ),
           ),
         ],
