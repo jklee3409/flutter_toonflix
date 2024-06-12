@@ -15,7 +15,6 @@ class _SearchScreenState extends State<SearchScreen> {
   Future<List<WebtoonModel>>? searchList;
   Future<List<WebtoonModel>> fullList = ApiServices.getTodaysToons();
   String? inputText;
-  bool isSearch = false;
 
   @override
   Widget build(BuildContext context) {

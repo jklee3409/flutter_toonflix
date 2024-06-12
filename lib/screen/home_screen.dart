@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/models/webtoon_model.dart';
+import 'package:toonflix/screen/favorite_screnn.dart';
 import 'package:toonflix/services/api_services.dart';
 import 'package:toonflix/screen/search_screen.dart';
 import 'package:toonflix/widget/webtoon_widget.dart';
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(
           "Toonflix",
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 30,
             fontWeight: FontWeight.w600,
             fontFamily: "Oswald",
           ),
@@ -60,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             },
           ),
-          const SearchScreen()
+          const SearchScreen(),
+          const FavoriteScreen()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

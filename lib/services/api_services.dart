@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toonflix/models/webtoon_model.dart';
 import 'package:toonflix/models/webtoon_detail_model.dart';
 import 'package:toonflix/models/webtoon_episode_model.dart';
@@ -29,6 +30,13 @@ class ApiServices {
     return allWebtoons
         .where((webtoon) => webtoon.title.contains(query))
         .toList();
+  }
+
+  static Future<List<WebtoonModel>> likeToons(List<String> query) async {
+    final allWebtoons = await getTodaysToons();
+    final likedWebtoons =
+        allWebtoons.where((webtoon) => query.contains(webtoon.id)).toList();
+    return likedWebtoons;
   }
 
   Future<WebtoonDetailModel> getToonById(String id) async {
