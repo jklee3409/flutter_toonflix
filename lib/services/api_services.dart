@@ -24,6 +24,13 @@ class ApiServices {
     throw Error();
   }
 
+  static Future<List<WebtoonModel>> searchToons(String query) async {
+    final allWebtoons = await getTodaysToons();
+    return allWebtoons
+        .where((webtoon) => webtoon.title.contains(query))
+        .toList();
+  }
+
   Future<WebtoonDetailModel> getToonById(String id) async {
     final url = Uri.parse("$baseUrl/$id");
     final response = await http.get(url);
